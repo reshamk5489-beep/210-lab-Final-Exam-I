@@ -54,6 +54,7 @@ void printAirports(const map<string, int> &airportFlightsCount, int low, int hig
 {
     for (const auto &p : airportFlightsCount) 
     {
+        cout << "Airport: " << p.first << " Count: " << p.second << " Low: " << low << " High: " << high << endl;
         if (p.second > low && p.second < high) 
         {
             cout << p.first << ": " << p.second << endl;
