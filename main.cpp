@@ -1,5 +1,6 @@
 #include <fstream>
 #include <map>
+#include <iostream>
 using namespace std;
 
 int main() 
@@ -15,6 +16,12 @@ int main()
     }
 
     file.close();
+
+    cout << "Airport Flight Counts:" << endl;
+    for (auto &p : airportFlightsCount)
+    {
+        cout << "\t" << p.first << ": " << p.second << endl;
+    }
 
     return 0;
 }
