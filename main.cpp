@@ -32,12 +32,12 @@ int main()
         }
     }
 
-    cout << endl << "Busiest airports with count " << maxFlightsCount << ":" << endl;
+    cout << endl << "Busiest airport(s) with count " << maxFlightsCount << ":" << endl;
     for (auto &p : airportFlightsCount)
     {
         if (p.second == maxFlightsCount)
         {
-            cout << p.first << ": " << p.second << endl;
+            cout << p.first << " " << p.second << endl;
         }
     }
 
@@ -56,9 +56,7 @@ void printAirports(const map<string, int> &airportFlightsCount, int low, int hig
     {
         if (p.second >= low && p.second <= high) 
         {
-            cout << p.first << ": " << p.second << endl;
+            cout << p.first << " " << p.second << endl;
         }
     }
 }
-
-// Milestone 3
