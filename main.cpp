@@ -41,11 +41,11 @@ int main()
         }
     }
 
-    cout << endl << "Airports with traffic in range [5, 8]:" << endl;
-    printAirports(airportFlightsCount, 5, 8);
+    cout << endl << "Airports with traffic in range [6, 9]:" << endl;
+    printAirports(airportFlightsCount, 6, 9);
 
-    cout << endl << "Airports with traffic in range [9, 12]:" << endl;
-    printAirports(airportFlightsCount, 9, 12);
+    cout << endl << "Airports with traffic in range [10, 13]:" << endl;
+    printAirports(airportFlightsCount, 10, 13);
 
     return 0;
 }
@@ -54,8 +54,7 @@ void printAirports(const map<string, int> &airportFlightsCount, int low, int hig
 {
     for (const auto &p : airportFlightsCount) 
     {
-        cout << "Airport: " << p.first << " Count: " << p.second << " Low: " << low << " High: " << high << endl;
-        if (p.second > low && p.second < high) 
+        if (p.second >= low && p.second <= high) 
         {
             cout << p.first << ": " << p.second << endl;
         }
