@@ -3,6 +3,8 @@
 #include <iostream>
 using namespace std;
 
+void printAirports(const map<string, int> &, int, int);
+
 int main() 
 {
     ifstream file("210-final-1-FA25.txt");
@@ -19,10 +21,10 @@ int main()
 
     file.close();
 
-    cout << "Airport Flight Counts:" << endl;
+    cout << "All airport traffic counts:" << endl;
     for (auto &p : airportFlightsCount)
     {
-        cout << "\t" << p.first << ": " << p.second << endl;
+        cout << p.first << " " << p.second << endl;
 
         if (p.second >= maxFlightsCount) 
         {
@@ -30,16 +32,31 @@ int main()
         }
     }
 
-    cout << endl << "Busiest Airport Counts:" << endl;
+    cout << endl << "Busiest airports with count " << maxFlightsCount << ":" << endl;
     for (auto &p : airportFlightsCount)
     {
         if (p.second == maxFlightsCount)
         {
-            cout << "\t" << p.first << ": " << p.second << endl;
+            cout << p.first << ": " << p.second << endl;
         }
     }
+
+    cout << endl << "Airports with traffic in range [5, 8]:" << endl;
+    printAirports(airportFlightsCount, 5, 8);
+
+    cout << endl << "Airports with traffic in range [9, 12]:" << endl;
+    printAirports(airportFlightsCount, 9, 12);
 
     return 0;
 }
 
-// Milestone 2
+void printAirports(const map<string, int> &airportFlightsCount, int low, int high)
+{
+    for (const auto &p : airportFlightsCount) 
+    {
+        if (p.second > low && p.second < high) 
+        {
+            cout << p.first << ": " << p.second << endl;
+        }
+    }
+}
