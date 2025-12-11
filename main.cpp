@@ -9,7 +9,7 @@ int main()
     map<string, int> airportFlightsCount;
     string originAirport;
     string destinationAirport;
-    int maxFlightsCount;
+    int maxFlightsCount = 0;
 
     while (file >> originAirport >> destinationAirport) 
     {
@@ -22,7 +22,6 @@ int main()
     cout << "Airport Flight Counts:" << endl;
     for (auto &p : airportFlightsCount)
     {
-        maxFlightsCount = 0;
         cout << "\t" << p.first << ": " << p.second << endl;
 
         if (p.second >= maxFlightsCount) 
@@ -31,9 +30,7 @@ int main()
         }
     }
 
-    cout << "Max Flight Count: " << maxFlightsCount << endl;
-
-    cout << "Busiest Airport Counts:" << endl;
+    cout << endl << "Busiest Airport Counts:" << endl;
     for (auto &p : airportFlightsCount)
     {
         if (p.second == maxFlightsCount)
