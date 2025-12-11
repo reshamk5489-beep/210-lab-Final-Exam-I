@@ -13,6 +13,7 @@ int main()
     while (file >> originAirport >> destinationAirport) 
     {
         airportFlightsCount[originAirport]++;
+        airportFlightsCount[destinationAirport]++;
     }
 
     file.close();
