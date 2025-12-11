@@ -60,3 +60,5 @@ void printAirports(const map<string, int> &airportFlightsCount, int low, int hig
         }
     }
 }
+
+// Milestone 3
